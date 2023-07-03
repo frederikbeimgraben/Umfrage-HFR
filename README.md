@@ -7,3 +7,10 @@ Geplante Features:
   - [ ] Ergebnisse für Endnutzer sichtbar
 - [ ] Backend
   - [ ] Ergebnisse sammeln
+
+## Frontend:
+- React / TS
+- Ergebnisse werden im Browser berechnet und erst danach an den Server weitergegeben
+
+## Backend
+- Python Restful API
