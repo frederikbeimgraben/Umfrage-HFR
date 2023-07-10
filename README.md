@@ -10,7 +10,8 @@ Geplante Features:
 
 ## Frontend:
 - React / TS
-- Ergebnisse werden im Browser berechnet und erst danach an den Server weitergegeben
+- ~Ergebnisse werden im Browser berechnet und erst danach an den Server weitergegeben~
 
 ## Backend
 - Python Restful API
+- Berechnet Ergebnisse und sammelt anonymisierte Daten für Statistik
