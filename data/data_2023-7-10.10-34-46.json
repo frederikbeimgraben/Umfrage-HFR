@@ -1,0 +1,151 @@
+{
+    "title": "Test123",
+    "pages": [
+      {
+        "name": "survey-page-1",
+        "elements": [
+          {
+            "type": "radiogroup",
+            "name": "model",
+            "title": "Welches Bejagungsmodell wenden Sie aktuell an?",
+            "valueName": "model",
+            "clearIfInvisible": "none",
+            "choices": [
+              "Pachtjagd",
+              "Eigenbewirtschaftung (Regiejagd)",
+              "Sonstige"
+            ]
+          }
+        ],
+        "title": "Jagdmodell"
+      },
+      {
+        "name": "page1",
+        "elements": [
+          {
+            "type": "matrix",
+            "name": "question1",
+            "title": "Fragen",
+            "columns": [
+              {
+                "value": "disagree",
+                "text": "Stimme nicht zu"
+              },
+              {
+                "value": "neutral",
+                "text": "Neutral"
+              },
+              {
+                "value": "agree",
+                "text": "Stimme zu"
+              },
+              {
+                "value": "na",
+                "text": "Überspringen"
+              }
+            ],
+            "rows": [
+              {
+                "value": "Row 1",
+                "text": "Die finanzielle Gesamtsituation der Kommune ist angespannt."
+              },
+              {
+                "value": "Row 2",
+                "text": "Die Jagdpacht spielt als konstante Einnahmequelle innerhalb des Haushalts eine wichtige Rolle."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "page2",
+        "elements": [
+          {
+            "type": "dropdown",
+            "name": "question2",
+            "choices": [
+              "Item 1",
+              "Item 2",
+              "Item 3"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "page3",
+        "elements": [
+          {
+            "type": "rating",
+            "name": "question3"
+          }
+        ]
+      },
+      {
+        "name": "page4",
+        "elements": [
+          {
+            "type": "matrixdropdown",
+            "name": "question4",
+            "columns": [
+              {
+                "name": "Column 1"
+              },
+              {
+                "name": "Column 2"
+              },
+              {
+                "name": "Column 3"
+              }
+            ],
+            "choices": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "rows": [
+              "Row 1",
+              "Row 2"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "page5",
+        "elements": [
+          {
+            "type": "matrixdynamic",
+            "name": "question5",
+            "columns": [
+              {
+                "name": "Column 1"
+              },
+              {
+                "name": "Column 2"
+              },
+              {
+                "name": "Column 3"
+              }
+            ],
+            "choices": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "name": "page6",
+        "elements": [
+          {
+            "type": "html",
+            "name": "question6"
+          }
+        ]
+      }
+    ]
+  }
