@@ -1,0 +1,59 @@
+{
+    "title": "Test",
+    "targets": [
+        {
+            "name": "Test 1",
+            "states": 3
+        },
+        {
+            "name": "Test 2",
+            "states": 2
+        }
+    ],
+    "questions": [
+        {
+            "title": "Question 1",
+            "text": "What is the answer to question 1?",
+            "options": [
+                {
+                    "text": "Option 1",
+                    "next_states": [1, -1],
+                    "scores": [
+                        [2, 1, 0],
+                        [1, 2]
+                    ]
+                },
+                {
+                    "text": "Option 2",
+                    "next_states": [-1, -1],
+                    "scores": [
+                        [1, 2, 3],
+                        [1, 0]
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Question 2",
+            "text": "What is the answer to question 2?",
+            "options": [
+                {
+                    "text": "Option 1",
+                    "next_states": [1, -1],
+                    "scores": [
+                        [2, 0, 1],
+                        [3, 1]
+                    ]
+                },
+                {
+                    "text": "Option 2",
+                    "next_states": [-1, -1],
+                    "scores": [
+                        [3, 1, 2],
+                        [2, 4]
+                    ]
+                }
+            ]
+        }
+    ]
+}
