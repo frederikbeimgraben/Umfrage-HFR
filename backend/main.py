@@ -6,8 +6,18 @@ API Server for the Survey App
 import os
 import json
 from flask import Flask, request, jsonify, send_from_directory
+import importlib
 
 from survey import Survey, JSON, SurveyError
+
+# Setup tasks
+## Create ./data directory if it doesn't exist
+base_folder = os.path.dirname(__file__)
+
+if not os.path.exists(os.path.join(base_folder, 'data')):
+    os.mkdir(os.path.join(base_folder, 'data'))
+
+import surveys
 
 app = Flask(__name__, static_url_path='')
 

@@ -15,13 +15,47 @@ StylesManager.ThemeColors["modern"] = {
 };
 
 const apiServer = "https://api.beimgraben.net";
-const apiEndpoint = "/api/surveys/jagdmodelle";
-const evaluationEndpoint = apiEndpoint + "/eval";
+const apiEndpoint = "/api/surveys/";
+var surveyName = "jagdmodelle";
+
+function ApiEndpoint() {
+    return apiServer + apiEndpoint + surveyName;
+}
+
+function EvaluationEndpoint() {
+return ApiEndpoint() + "/eval";
+}
 
 export function GetSurvey(): Model {
+    // Get GET parameter "?survey" if it exists
+    const urlParams = new URLSearchParams(window.location.search);
+    const survey = urlParams.get('survey');
+
+    // Get available surveys from server (from api.beimgraben.net/api/surveys)
+    const survRequest = new XMLHttpRequest();
+    survRequest.open("GET", apiServer + "/api/surveys", false);
+    survRequest.send(null);
+
+    var surveys = [];
+
+    if (survRequest.status === 200) {
+        surveys = JSON.parse(survRequest.responseText).surveys;
+    }
+
+    console.log("Available surveys: " + surveys);
+    console.log("Survey: " + survey);
+
+    // If survey is null or not in surveys, set to default
+    if (survey === null || !surveys.includes(survey)) {
+        surveyName = "jagdmodelle";
+    } else {
+        surveyName = survey;
+    }
+        
+
     // Retrieve survey from server
     const request = new XMLHttpRequest();
-    request.open("GET", apiServer + apiEndpoint, false);
+    request.open("GET", ApiEndpoint(), false);
     request.send(null);
 
     if (request.status === 200) {
@@ -93,7 +127,7 @@ class SurveyComponent extends React.Component {
 
         // Send to server
         const request = new XMLHttpRequest();
-        request.open("POST", apiServer + evaluationEndpoint, false);
+        request.open("POST", EvaluationEndpoint(), false);
         request.setRequestHeader("Content-Type", "application/json");
 
         const payload = {
