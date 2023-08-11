@@ -11,7 +11,6 @@ from survey import Survey, JSON, SurveyError
 
 app = Flask(__name__, static_url_path='')
 
-
 @app.route('/')
 def index() -> str:
     """Serve the index page"""
@@ -135,11 +134,14 @@ def eval_survey(survey_name: str) -> JSON:
 # Set CORS headers for the main app
 @app.after_request
 def after_request(response):
-    response.headers.add('Access-Control-Allow-Origin', 'http://localhost:3000')
+    response.headers.add('Access-Control-Allow-Origin', 'http://*.beimgraben.net http://localhost:3000 https://*.beimgraben.net https://localhost:3000')
     response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
     response.headers.add('Access-Control-Allow-Methods', 'GET,POST')
     response.headers.add('Access-Control-Allow-Credentials', 'true')
     return response
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    # Make production-ready
+    app.config['ENV'] = 'production'
+    
+    app.run(debug=False, host='0.0.0.0')

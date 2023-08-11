@@ -1,56 +1,2289 @@
 {
-    "title": "Test",
+    "title": "Jagdmodelle",
     "targets": [
         {
-            "name": "Test 1",
+            "name": "Regie",
             "states": 3
         },
         {
-            "name": "Test 2",
-            "states": 2
+            "name": "Pacht",
+            "states": 3
         }
     ],
     "questions": [
         {
-            "title": "Question 1",
-            "text": "What is the answer to question 1?",
+            "title": "Aktuelles Bejagungsmodell",
+            "text": "Welches Bejagungsmodell wenden Sie aktuell an?",
             "options": [
                 {
-                    "text": "Option 1",
-                    "next_states": [1, -1],
+                    "text": "Pachtjagd",
                     "scores": [
-                        [2, 1, 0],
-                        [1, 2]
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        0,
+                        0
                     ]
                 },
                 {
-                    "text": "Option 2",
-                    "next_states": [-1, -1],
+                    "text": "Regiejagd",
                     "scores": [
-                        [1, 2, 3],
-                        [1, 0]
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "text": "Sonstige",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
                     ]
                 }
             ]
         },
         {
-            "title": "Question 2",
-            "text": "What is the answer to question 2?",
+            "title": "Finanzielle Situation der Gemeinde",
+            "text": "Die finanzielle Gesamtsituation der Kommune ist angespannt.",
             "options": [
                 {
-                    "text": "Option 1",
-                    "next_states": [1, -1],
+                    "text": "Stimme zu",
                     "scores": [
-                        [2, 0, 1],
-                        [3, 1]
+                        [
+                            2,
+                            2,
+                            2
+                        ],
+                        [
+                            0,
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
                     ]
                 },
                 {
-                    "text": "Option 2",
-                    "next_states": [-1, -1],
+                    "text": "Neutral",
                     "scores": [
-                        [3, 1, 2],
-                        [2, 4]
+                        [
+                            1,
+                            1,
+                            1
+                        ],
+                        [
+                            1,
+                            1,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme nicht zu",
+                    "scores": [
+                        [
+                            0,
+                            0,
+                            0
+                        ],
+                        [
+                            2,
+                            2,
+                            2
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Finanzielle Situation der Gemeinde",
+            "text": "Die Pacht spielt als konstante Einnahmequelle innelb des Haushalts eine wichtige Rolle.",
+            "options": [
+                {
+                    "text": "Stimme zu",
+                    "scores": [
+                        [
+                            2,
+                            2,
+                            2
+                        ],
+                        [
+                            0,
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Neutral",
+                    "scores": [
+                        [
+                            1,
+                            1,
+                            1
+                        ],
+                        [
+                            1,
+                            1,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme nicht zu",
+                    "scores": [
+                        [
+                            0,
+                            0,
+                            0
+                        ],
+                        [
+                            2,
+                            2,
+                            2
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Finanzielle Situation der Gemeinde",
+            "text": "Aufgrund der Kosten, die das Wild  durch notwendige Schutzma\u00dfnahmen (z.B.: Wuchsh\u00fcllen, Zaun) verursacht, \u00fcbersteigen die Ausgaben f\u00fcr die Jagd die Einnahmen aus der Jagdpacht deutlich.",
+            "options": [
+                {
+                    "text": "Stimme zu",
+                    "scores": [
+                        [
+                            0,
+                            0,
+                            0
+                        ],
+                        [
+                            2,
+                            2,
+                            2
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Neutral",
+                    "scores": [
+                        [
+                            1,
+                            1,
+                            1
+                        ],
+                        [
+                            1,
+                            1,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme nicht zu",
+                    "scores": [
+                        [
+                            2,
+                            2,
+                            2
+                        ],
+                        [
+                            0,
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Finanzielle Situation der Gemeinde",
+            "text": "Der Organisationsaufwand und die Verwaltungskosten f\u00fcr unsere Jagdgenossenschaft/Kommune sollen im Bereich der Bejagung so gering wie m\u00f6glich gehalten werden.",
+            "options": [
+                {
+                    "text": "Stimme zu",
+                    "scores": [
+                        [
+                            2,
+                            2,
+                            2
+                        ],
+                        [
+                            0,
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Neutral",
+                    "scores": [
+                        [
+                            1,
+                            1,
+                            1
+                        ],
+                        [
+                            1,
+                            1,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme nicht zu",
+                    "scores": [
+                        [
+                            0,
+                            0,
+                            0
+                        ],
+                        [
+                            2,
+                            2,
+                            2
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Finanzielle Situation der Gemeinde",
+            "text": "In den n\u00e4chsten f\u00fcnf Jahren k\u00f6nnen vorhandene finanzielle Mittel in die jagdliche Neuorganisation investiert werden. Aber nur, wenn dadurch langfristig Geld eingespart werden kann. Z.B.: aufgrund verringerter Kosten f\u00fcr Schutzma\u00dfnahmen (z.B.: Wuchsh\u00fcllen, Zaun) oder Pflanzungen.",
+            "options": [
+                {
+                    "text": "Stimme zu",
+                    "scores": [
+                        [
+                            0,
+                            0,
+                            0
+                        ],
+                        [
+                            2,
+                            2,
+                            2
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Neutral",
+                    "scores": [
+                        [
+                            1,
+                            1,
+                            1
+                        ],
+                        [
+                            1,
+                            1,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme nicht zu",
+                    "scores": [
+                        [
+                            2,
+                            2,
+                            2
+                        ],
+                        [
+                            0,
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Finanzielle Situation der Gemeinde",
+            "text": "Die derzeitigen P\u00e4chter spielen beispielsweise durch Gewerbesteuerzahlungen, Finanzierung von Vereinen oder Spenden auch abseits der Jagd eine wichtige Rolle f\u00fcr die Gemeinde.",
+            "options": [
+                {
+                    "text": "Stimme zu",
+                    "scores": [
+                        [
+                            2,
+                            2,
+                            2
+                        ],
+                        [
+                            0,
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Neutral",
+                    "scores": [
+                        [
+                            1,
+                            1,
+                            1
+                        ],
+                        [
+                            1,
+                            1,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme nicht zu",
+                    "scores": [
+                        [
+                            0,
+                            0,
+                            0
+                        ],
+                        [
+                            2,
+                            2,
+                            2
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Jagdstruktur",
+            "text": "Je h\u00f6her der Feldanteil, desto h\u00f6her die Wildschadensersatzforderung. Daraus resultieren auch h\u00f6here Kosten f\u00fcr die Kommune/Jagdgenossenschaft. Wie hoch ist der Feldanteil in Ihrem gemeinschaftlichen Jagdbezirk?",
+            "options": [
+                {
+                    "text": "<25%",
+                    "scores": [
+                        [
+                            3,
+                            3,
+                            3
+                        ],
+                        [
+                            0,
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "25-50%",
+                    "scores": [
+                        [
+                            2,
+                            2,
+                            2
+                        ],
+                        [
+                            1,
+                            1,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "50-75%",
+                    "scores": [
+                        [
+                            1,
+                            1,
+                            1
+                        ],
+                        [
+                            2,
+                            2,
+                            2
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": ">75%",
+                    "scores": [
+                        [
+                            0,
+                            0,
+                            0
+                        ],
+                        [
+                            3,
+                            3,
+                            3
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Jagdstruktur",
+            "text": "Nehmen wir an die Kommune h\u00e4tte den Wunsch den gemeinschaftlichen Jagdbezirk durch Eigenbewirtschaftung zu bejagen. Hielten sie es f\u00fcr realistisch, dass die Kommune Ihren Willen in der Jagdgenossenschaft derzeit gegen etwaige Widerst\u00e4nde durchsetzen k\u00f6nnte?",
+            "options": [
+                {
+                    "text": "Ja",
+                    "scores": [
+                        [
+                            0,
+                            0,
+                            0
+                        ],
+                        [
+                            2,
+                            2,
+                            2
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Nein",
+                    "scores": [
+                        [
+                            2,
+                            2,
+                            2
+                        ],
+                        [
+                            0,
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Vielleicht",
+                    "scores": [
+                        [
+                            1,
+                            1,
+                            1
+                        ],
+                        [
+                            1,
+                            1,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Jagdstruktur",
+            "text": "Als Grundeigent\u00fcmer bin ich bereit Organisationsaufwand und Kosten f\u00fcr die jagdliche Neuorganisation zu \u00fcbernehmen, m\u00f6chte im Gegenzug jedoch auch ein direktes Mitbestimmungsrecht, was die Jagdaus\u00fcbung angeht. Damit ist z.B. die Ausf\u00fchrung von Bewegungsjagden gemeint.",
+            "options": [
+                {
+                    "text": "Stimme zu",
+                    "scores": [
+                        [
+                            0,
+                            0,
+                            0
+                        ],
+                        [
+                            2,
+                            2,
+                            2
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Neutral",
+                    "scores": [
+                        [
+                            1,
+                            1,
+                            1
+                        ],
+                        [
+                            1,
+                            1,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme nicht zu",
+                    "scores": [
+                        [
+                            2,
+                            2,
+                            2
+                        ],
+                        [
+                            0,
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Jagdstruktur",
+            "text": "Die Kommune/Jagdgenossenschaft hat an der Vermarktung von Wildbret Interesse. Sie m\u00f6chte der Bev\u00f6lkerung ein hochwertiges Nahrungsmittel aus dem eigenen Wald zur Verf\u00fcgung stellen. Deshalb ist sie bereit, die Kosten f\u00fcr K\u00fchlung, ggf. anfallende Weiterverarbeitung und Vertrieb vorzufinanzieren.",
+            "options": [
+                {
+                    "text": "Stimme zu",
+                    "scores": [
+                        [
+                            0,
+                            0,
+                            0
+                        ],
+                        [
+                            2,
+                            2,
+                            2
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Neutral",
+                    "scores": [
+                        [
+                            1,
+                            1,
+                            1
+                        ],
+                        [
+                            1,
+                            1,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme nicht zu",
+                    "scores": [
+                        [
+                            2,
+                            2,
+                            2
+                        ],
+                        [
+                            0,
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Jagdstruktur",
+            "text": "Die Kommune/Jagdgenossenschaft m\u00f6chte so vielen ortsans\u00e4ssigen J\u00e4gern wie m\u00f6glich eine Jagdm\u00f6glichkeit in ihrem gemeinschaftlichen Jagdbezirk bieten.",
+            "options": [
+                {
+                    "text": "Stimme zu",
+                    "scores": [
+                        [
+                            0,
+                            0,
+                            0
+                        ],
+                        [
+                            2,
+                            2,
+                            2
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Neutral",
+                    "scores": [
+                        [
+                            1,
+                            1,
+                            1
+                        ],
+                        [
+                            1,
+                            1,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme nicht zu",
+                    "scores": [
+                        [
+                            2,
+                            2,
+                            2
+                        ],
+                        [
+                            0,
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Jagdstruktur",
+            "text": "Das aktuelle Verh\u00e4ltnis zwischen Grundeigent\u00fcmern und J\u00e4gern ist gut. Der Grund daf\u00fcr ist, dass sich die J\u00e4ger als Dienstleister der Grundeigent\u00fcmer verstehen und Ihre Jagd regelm\u00e4\u00dfig anhand von Vorgaben bzw. Forderungen dieser anpassen.",
+            "options": [
+                {
+                    "text": "Stimme zu",
+                    "scores": [
+                        [
+                            2,
+                            0
+                        ],
+                        [
+                            0,
+                            2
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme nicht zu",
+                    "scores": [
+                        [
+                            0,
+                            2
+                        ],
+                        [
+                            2,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Neutral",
+                    "scores": [
+                        [
+                            1,
+                            1,
+                            1
+                        ],
+                        [
+                            1,
+                            1,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Jagdstruktur",
+            "text": "Neuverpachtung stellt kein Problem dar. Es sind stehts mehr als genug Interessenten vorhanden.",
+            "options": [
+                {
+                    "text": "Stimme zu",
+                    "scores": [
+                        [
+                            2,
+                            2,
+                            2
+                        ],
+                        [
+                            0,
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Neutral",
+                    "scores": [
+                        [
+                            1,
+                            1,
+                            1
+                        ],
+                        [
+                            1,
+                            1,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme nicht zu",
+                    "scores": [
+                        [
+                            0,
+                            0,
+                            0
+                        ],
+                        [
+                            2,
+                            2,
+                            2
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Jagdstruktur",
+            "text": "F\u00fcr eine Eigenbewirtschaftung sind gen\u00fcgend interessierte J\u00e4ger vorhanden. Erkennbar ist dies daran, dass ausreichend Anfragen f\u00fcr Jagderlaubnisscheine vorhanden sind. Zus\u00e4tzlich besteht eine gute Anbindung an Verkehrswegen und/oder Ballungszentren.",
+            "options": [
+                {
+                    "text": "Stimme zu",
+                    "scores": [
+                        [
+                            0,
+                            0,
+                            0
+                        ],
+                        [
+                            2,
+                            2,
+                            2
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Neutral",
+                    "scores": [
+                        [
+                            1,
+                            1,
+                            1
+                        ],
+                        [
+                            1,
+                            1,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme nicht zu",
+                    "scores": [
+                        [
+                            2,
+                            2,
+                            2
+                        ],
+                        [
+                            0,
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Jagdstruktur",
+            "text": "Es g\u00e4be eine Person/Personen (z.B.: Forstbedienstete, Forstwirte, o.\u00e4.) die sowohl jagdfachlich als auch zeitlich in der Lage ist/sind die Gesamtorganisation einer Eigenbewirtschaftung zu \u00fcbernehmen.",
+            "options": [
+                {
+                    "text": "Stimme zu",
+                    "scores": [
+                        [
+                            0,
+                            0,
+                            0
+                        ],
+                        [
+                            2,
+                            2,
+                            2
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Neutral",
+                    "scores": [
+                        [
+                            1,
+                            1,
+                            1
+                        ],
+                        [
+                            1,
+                            1,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme nicht zu",
+                    "scores": [
+                        [
+                            2,
+                            2,
+                            2
+                        ],
+                        [
+                            0,
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Jagdstruktur",
+            "text": "Die bisherigen P\u00e4chter spielen beispielsweise durch Ehren\u00e4mter, Wohnraumvermietung oder Arbeitspl\u00e4tze auch abseits der Jagd eine wichtige Rolle.",
+            "options": [
+                {
+                    "text": "Stimme zu",
+                    "scores": [
+                        [
+                            2,
+                            2,
+                            2
+                        ],
+                        [
+                            0,
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Neutral",
+                    "scores": [
+                        [
+                            1,
+                            1,
+                            1
+                        ],
+                        [
+                            1,
+                            1,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme nicht zu",
+                    "scores": [
+                        [
+                            0,
+                            0,
+                            0
+                        ],
+                        [
+                            2,
+                            2,
+                            2
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Jagdstruktur",
+            "text": "W\u00e4hlen Sie zwischen den Vorteilen! Die Pacht bietet den Vorteil, dass die Jagdp\u00e4chter durch die lange Bindung viel ins eigene Revier und damit in den gemeinchaftlichen Jagdbezirk investieren. Die Eigenbewirtschaftung ist aufgrund der kurzen Bindung deutlich flexibler.",
+            "options": [
+                {
+                    "text": "Pachtjagd",
+                    "scores": [
+                        [
+                            1,
+                            1,
+                            1
+                        ],
+                        [
+                            0,
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Regiejagd",
+                    "scores": [
+                        [
+                            0,
+                            0,
+                            0
+                        ],
+                        [
+                            1,
+                            1,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Wildschaden in Wald/Feld",
+            "text": "Alle Hauptbaumarten k\u00f6nnen von Natur aus und ohne Schutzma\u00dfnahmen (z.B. Wuchsh\u00fcllen, Z\u00e4une) einen Wald bilden. Dass liegt an der guten Bejagung durch die aktuellen J\u00e4ger.",
+            "options": [
+                {
+                    "text": "Stimme zu",
+                    "scores": [
+                        [
+                            3,
+                            0
+                        ],
+                        [
+                            0,
+                            3
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme teilweise zu",
+                    "scores": [
+                        [
+                            2,
+                            1
+                        ],
+                        [
+                            1,
+                            2
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme teilweise nicht zu",
+                    "scores": [
+                        [
+                            1,
+                            2
+                        ],
+                        [
+                            2,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme nicht zu",
+                    "scores": [
+                        [
+                            0,
+                            3
+                        ],
+                        [
+                            3,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Wildschaden in Wald/Feld",
+            "text": "Bei den FSC oder PEFC zertifizierten Fl\u00e4chen gibt es keine Beanstandungen wegen Wildsch\u00e4den durch den Zertifizierer. Dies ist der guten Bejagung zu verdanken.",
+            "options": [
+                {
+                    "text": "Stimme zu",
+                    "scores": [
+                        [
+                            3,
+                            0
+                        ],
+                        [
+                            0,
+                            3
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme teilweise zu",
+                    "scores": [
+                        [
+                            2,
+                            1
+                        ],
+                        [
+                            1,
+                            2
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme teilweise nicht zu",
+                    "scores": [
+                        [
+                            1,
+                            2
+                        ],
+                        [
+                            2,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme nicht zu",
+                    "scores": [
+                        [
+                            0,
+                            3
+                        ],
+                        [
+                            3,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Wildschaden in Wald/Feld",
+            "text": "Schutzma\u00dfnahmen (z.B.: Wuchsh\u00fcllen, Z\u00e4une) sind der gr\u00f6\u00dfte Kostenfaktor bei Pflanzungen. Pflanzungen sowie verbissintensive Naturverj\u00fcngung (Eiche und Tanne) m\u00fcssen in unserem gemeinschaftlichen Jagdbezirk in mehr als 50% der F\u00e4lle gegen Wildschaden gesch\u00fctzt werden.",
+            "options": [
+                {
+                    "text": "Stimme zu",
+                    "scores": [
+                        [
+                            0,
+                            3
+                        ],
+                        [
+                            3,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme teilweise zu",
+                    "scores": [
+                        [
+                            1,
+                            2
+                        ],
+                        [
+                            2,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme teilweise nicht zu",
+                    "scores": [
+                        [
+                            2,
+                            1
+                        ],
+                        [
+                            1,
+                            2
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme nicht zu",
+                    "scores": [
+                        [
+                            3,
+                            0
+                        ],
+                        [
+                            0,
+                            3
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Wildschaden in Wald/Feld",
+            "text": "Die von J\u00e4gern getroffenen Schutzma\u00dfnahmen (z.B.: Wuchsh\u00fcllen, Z\u00e4une, gute Bejagung) gegen Wildschaden sind wirkungsvoll.",
+            "options": [
+                {
+                    "text": "Stimme zu",
+                    "scores": [
+                        [
+                            3,
+                            0
+                        ],
+                        [
+                            0,
+                            3
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme teilweise zu",
+                    "scores": [
+                        [
+                            2,
+                            1
+                        ],
+                        [
+                            1,
+                            2
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme teilweise nicht zu",
+                    "scores": [
+                        [
+                            1,
+                            2
+                        ],
+                        [
+                            2,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme nicht zu",
+                    "scores": [
+                        [
+                            0,
+                            3
+                        ],
+                        [
+                            3,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Wildschaden in Wald/Feld",
+            "text": "Durch die gute Bejagung gibt es kein Problem mit Wildsch\u00e4den auf landwirtschaftlichen Fl\u00e4chen.",
+            "options": [
+                {
+                    "text": "Stimme zu",
+                    "scores": [
+                        [
+                            3,
+                            0
+                        ],
+                        [
+                            0,
+                            3
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme teilweise zu",
+                    "scores": [
+                        [
+                            2,
+                            1
+                        ],
+                        [
+                            1,
+                            2
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme teilweise nicht zu",
+                    "scores": [
+                        [
+                            1,
+                            2
+                        ],
+                        [
+                            2,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme nicht zu",
+                    "scores": [
+                        [
+                            0,
+                            3
+                        ],
+                        [
+                            3,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Wildschaden in Wald/Feld",
+            "text": "Durch die gute Bejagung gibt es kein Problem mit Wildsch\u00e4den auf Fl\u00e4chen wie z.B. Hausg\u00e4rten, Friedh\u00f6fen oder Spielpl\u00e4tzen.",
+            "options": [
+                {
+                    "text": "Stimme zu",
+                    "scores": [
+                        [
+                            3,
+                            0
+                        ],
+                        [
+                            0,
+                            3
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme teilweise zu",
+                    "scores": [
+                        [
+                            2,
+                            1
+                        ],
+                        [
+                            1,
+                            2
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme teilweise nicht zu",
+                    "scores": [
+                        [
+                            1,
+                            2
+                        ],
+                        [
+                            2,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme nicht zu",
+                    "scores": [
+                        [
+                            0,
+                            3
+                        ],
+                        [
+                            3,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Verh\u00e4ltnis Jagende und Dritte",
+            "text": "In einer Eigenbewirtschaftung existiert eine zentrale Ansprechperson f\u00fcr Probleme mit Erholungssuchenden (z.B.: Radfahrern, Wanderern usw.) oder anderen Interessengruppen (z.B.: Forstbediensteten, Anwohnern, Natursch\u00fctzern usw.). Bei der Pacht existiert in jedem Jagdrevier (mehrere Reviere) eine Ansprechperson. W\u00e4hlen  sie zwischen den beiden Modellen!",
+            "options": [
+                {
+                    "text": "Pachtjagd",
+                    "scores": [
+                        [
+                            1,
+                            1,
+                            1
+                        ],
+                        [
+                            0,
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Regiejagd",
+                    "scores": [
+                        [
+                            0,
+                            0,
+                            0
+                        ],
+                        [
+                            1,
+                            1,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Verh\u00e4ltnis Jagende und Dritte",
+            "text": "Die Grundeigent\u00fcmer sollten die M\u00f6glichkeit zur aktiven Regulierung des Wildschadens durch Eingriff in den Jagdbetrieb haben (einmal j\u00e4hrlich, zum 01.04.), auch wenn dies mit einer deutlichen Erh\u00f6hung (z.B.: einer Verdoppelung bis Vervierfachung) des Abschusses einhergeht.",
+            "options": [
+                {
+                    "text": "Stimme zu",
+                    "scores": [
+                        [
+                            0,
+                            0,
+                            0
+                        ],
+                        [
+                            2,
+                            2,
+                            2
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Neutral",
+                    "scores": [
+                        [
+                            1,
+                            1,
+                            1
+                        ],
+                        [
+                            1,
+                            1,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme nicht zu",
+                    "scores": [
+                        [
+                            2,
+                            2,
+                            2
+                        ],
+                        [
+                            0,
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Verh\u00e4ltnis Jagende und Dritte",
+            "text": "H\u00e4tten Sie als Kommune/Jagdgenossenschaft gerne die M\u00f6glichkeit, das Jagdaus\u00fcbungsrecht aus triftigen Gr\u00fcnden kurzfristig (j\u00e4hrlich zum 01.04) neu zu vergeben?",
+            "options": [
+                {
+                    "text": "Ja",
+                    "scores": [
+                        [
+                            0,
+                            0,
+                            0
+                        ],
+                        [
+                            2,
+                            2,
+                            2
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Nein",
+                    "scores": [
+                        [
+                            2,
+                            2,
+                            2
+                        ],
+                        [
+                            0,
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Vielleicht",
+                    "scores": [
+                        [
+                            1,
+                            1,
+                            1
+                        ],
+                        [
+                            1,
+                            1,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Verh\u00e4ltnis Jagende und Dritte",
+            "text": "Aktuell sind im Pachtvertrag Ausstiegsklauseln f\u00fcr P\u00e4chter vorhanden. Diese erm\u00f6glichen es z.B. bei einem ASP-Ausbruch oder hohen Wildschadenskosten aus dem Vertrag auszusteigen. Dies ist von Seiten der Kommune/Jagdgenossenschaft nicht erw\u00fcnscht.",
+            "options": [
+                {
+                    "text": "Stimme zu",
+                    "scores": [
+                        [
+                            0,
+                            0,
+                            0
+                        ],
+                        [
+                            2,
+                            2,
+                            2
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Neutral",
+                    "scores": [
+                        [
+                            1,
+                            1,
+                            1
+                        ],
+                        [
+                            1,
+                            1,
+                            1
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Stimme nicht zu",
+                    "scores": [
+                        [
+                            2,
+                            2,
+                            2
+                        ],
+                        [
+                            0,
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "text": "Keine Angabe",
+                    "scores": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ],
+                    "next_states": [
+                        -1,
+                        -1
                     ]
                 }
             ]
