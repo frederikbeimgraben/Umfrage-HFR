@@ -58,12 +58,13 @@ import flask
 
 from typing import Dict, List, Any, Generator, Tuple, Union
 
-JSONPrimitives = str | int | float | bool | None
+JSONPrimitives = Any # str | int | float | bool | None
 
-JSON = Dict[
-    str,
-    'JSON'
-] | List['JSON'] | JSONPrimitives
+JSON = Any
+# Dict[
+#    str,
+#    'JSON'
+# ] | List['JSON'] | JSONPrimitives
 
 class SurveyError(Exception):
     """Base class for all survey errors"""
@@ -129,8 +130,8 @@ Targets = List[Target]
 
 class Option:
     text: str
-    scores: list[list[int]]
-    next_states: list[int]
+    scores: List[List[int]]
+    next_states: List[int]
     
     def __init__(self, json: dict, targets: List[Target]):
         self.text = json["text"]
@@ -181,7 +182,7 @@ class Option:
 class Question:
     title: str
     text: str
-    options: list[Option]
+    options: List[Option]
     
     def __init__(self, json: dict, targets: Targets):
         self.title = json["title"]
@@ -250,8 +251,8 @@ def question_to_page(id: str, question: Question) -> JSON:
 
 class Survey:
     title: str
-    targets: list[Target]
-    questions: list[Question]
+    targets: List[Target]
+    questions: List[Question]
     
     def __init__(self, json: dict):
         self.title = json["title"]
@@ -273,7 +274,7 @@ class Survey:
         for question, answer in zip(self.questions, answers):
             yield question.eval(answer, targets)
         
-    def eval(self, answers: list[int]) -> List[Tuple[int, int]]:
+    def eval(self, answers: List[int]) -> List[Tuple[int, int]]:
         """
         Evaluate the survey for the given answers
         

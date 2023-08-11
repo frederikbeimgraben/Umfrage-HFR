@@ -1,5 +1,5 @@
 import { Survey } from 'survey-react-ui';
-import { Model, Question, ValidateQuestionEvent, CurrentPageChangingEvent } from 'survey-core';
+import { Model } from 'survey-core';
 import React from 'react';
 
 import 'survey-core/modern.min.css';
@@ -8,14 +8,13 @@ import "survey-core/survey.i18n";
 
 // Set main color
 import { StylesManager } from 'survey-core';
-import { stringify } from 'querystring';
 StylesManager.applyTheme("modern");
 // Main color should be rgb(24, 127, 44)
 StylesManager.ThemeColors["modern"] = {
     "$main-color": "#187f2c"
 };
 
-const apiServer = "http://localhost:5000";
+const apiServer = "http://api.beimgraben.net";
 const apiEndpoint = "/api/surveys/default";
 const evaluationEndpoint = "/api/surveys/default/eval";
 const referralCode = "123456";
@@ -28,6 +27,7 @@ export function GetSurvey(): Model {
 
     if (request.status === 200) {
         const survey = JSON.parse(request.responseText);
+        survey.locale = "de";
         return new Model(survey);
     }
 
@@ -35,12 +35,6 @@ export function GetSurvey(): Model {
 }
 
 const survey = GetSurvey();
-
-function JsonifyResults(survey: Model) {
-    const results = survey.data;
-    const json = JSON.stringify(results);
-    return json;
-}
 
 class SurveyComponent extends React.Component {
     state: { isCompleted: boolean };
@@ -126,7 +120,6 @@ class SurveyComponent extends React.Component {
                 <div className="survey-complete-bar-container">
                     {
                         results.map((result: any, index: number) => {
-                            const name = result.target;
                             const percent = result.percent * 100;
                             const winner = result.winner;
 
@@ -157,7 +150,7 @@ class SurveyComponent extends React.Component {
                             const name = result.target;
                             const winner = result.winner;
 
-                            const color = winner ? "#303030" : "#b3b3b3";
+                            const color = winner ? "rgb(196, 217, 201)" : "#b3b3b3";
 
                             return (
                                 <div className={
@@ -195,9 +188,6 @@ class SurveyComponent extends React.Component {
     }
 
     render() {
-        // Get GET parameters
-        const urlParams = new URLSearchParams(window.location.search);
-
         return !this.state.isCompleted ? (
             <Survey model={survey}
                     showCompletedPage={false}
