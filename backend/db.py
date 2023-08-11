@@ -31,7 +31,7 @@ class DataBase:
         
         self.cursor = self.db.cursor()
         
-    def add_survey(self, survey: str, questions: list):
+    def add_survey(self, survey: str, questions: list, targets: list):
         """
         Add a survey to the database
         """
@@ -41,6 +41,7 @@ class DataBase:
             CREATE TABLE IF NOT EXISTS {survey} (
                 id INTEGER PRIMARY KEY,
                 {', '.join([f'q{i} INTEGER' for i, _ in enumerate(questions)])},
+                {', '.join([f't{i} INTEGER' for i, _ in enumerate(targets)])},
                 reference TEXT
             )
             """
@@ -48,7 +49,7 @@ class DataBase:
         
         self.db.commit()
         
-    def add_result(self, survey: str, questions, reference: str=None):
+    def add_result(self, survey: str, questions, results, reference: str=None):
         """
         Add a user response to the database
         """
@@ -57,10 +58,12 @@ class DataBase:
             f"""
         INSERT INTO {survey} (
             {', '.join([f'q{i}' for i, _ in enumerate(questions)])},
+            {', '.join([f't{i}' for i, _ in enumerate(results)])},
             reference
         )
         VALUES (
             {', '.join([str(q) for q in questions])},
+            {', '.join([str(r) for r in results])},
             '{reference}'
         )
         """

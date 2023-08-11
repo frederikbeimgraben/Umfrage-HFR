@@ -55,9 +55,7 @@ def Question(text: str, options: List[Any], title: str=None) -> Dict[str, Any]:
     question = {
         "title": f"Frage {COUNTER}" if title is None else title,
         "text": text,
-        "options": options + [
-            Option("Keine Angabe", ZERO)
-        ]
+        "options": options
     }
     
     COUNTER += 1
@@ -72,7 +70,7 @@ JSON = {
             "Das ist eine Beispielumfrage. Verstehst du, wie das funktioniert?",
             [
                 Option("Fragen und Optionen können dynamisch generiert werden.", [0, 1]),
-                Option("Das alles läuft über <a href=\"https://api.beimgraben.net/api/surveys>api.beimgraben.net</a>", [0, 1]),
+                Option("Das alles läuft über api.beimgraben.net", [0, 1]),
                 Option("Neuerdings sogar mit HTTPS.", [0, 1])
             ],
             title="Oh, wie bist du hier gelandet?!"

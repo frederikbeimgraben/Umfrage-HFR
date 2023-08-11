@@ -136,9 +136,15 @@ def eval_survey(survey_name: str) -> JSON:
         evaluation = survey.eval(answers.values())
         
         if not survey_name in db:
-            db.add_survey(survey_name, survey.questions)
+            db.add_survey(survey_name, survey.questions, survey.targets)
             
-        db.add_result(survey_name, answers.values(), ref)
+        db.add_result(
+            survey_name,
+            answers.values(),
+            [
+                t["result"] for t in evaluation    
+            ],
+            reference=ref)
         
         return jsonify(
             evaluation

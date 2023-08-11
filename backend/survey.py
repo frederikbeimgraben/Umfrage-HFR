@@ -274,7 +274,7 @@ class Survey:
         for question, answer in zip(self.questions, answers):
             yield question.eval(answer, targets)
         
-    def eval(self, answers: List[int]) -> List[Tuple[int, int]]:
+    def eval(self, answers: List[int]) -> List[Dict]:
         """
         Evaluate the survey for the given answers
         
@@ -285,6 +285,9 @@ class Survey:
         
         results = list(map(sum, zip(*self.__eval(answers, targets))))
         
+        if sum(results) == 0:
+            results = [1] * len(results)
+        
         percents = list(map(lambda x: x / sum(results), results))
         
         targets_o = [target for _, target in targets]
@@ -294,8 +297,9 @@ class Survey:
                 "target": t.name,
                 "end_state": t.state,
                 "percent": p,
-                "winner": p == max(percents) and (p > 0.5 or i == 0)
-            } for i, (t, p) in enumerate(zip(targets_o, percents))
+                "winner": p == max(percents) and (p > 0.5 or i == 0),
+                "result": r
+            } for i, (t, p, r) in enumerate(zip(targets_o, percents, results))
         ]
         
         return result
