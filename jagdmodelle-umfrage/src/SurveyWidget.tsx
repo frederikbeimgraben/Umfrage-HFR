@@ -171,11 +171,16 @@ class SurveyComponent extends React.Component {
 
                             const color = winner ? "#187f2c" : "#d3d3d3";
 
+                            // Width is at least the corner radius of the bar (1.5em)
+
                             return (
                                 <div className={
                                     "survey-complete-bar survey-complete-graph-bar-" +
                                     (index === 0 ? "left" : "right")
-                                } style={{ width: percent + "%", backgroundColor: color }}></div>
+                                } style={
+                                    { width: "max(" + percent + "%, 1.5em)",
+                                    backgroundColor: color }
+                                }></div>
                             )
                         })
                     }
