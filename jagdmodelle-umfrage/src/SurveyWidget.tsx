@@ -134,7 +134,7 @@ class SurveyComponent extends React.Component {
             // Data as list of responses (integer indices)
             "answers": data,
             // Referral code
-            "referral_code": referralCode
+            "ref": referralCode
         };
 
         request.send(JSON.stringify(payload));

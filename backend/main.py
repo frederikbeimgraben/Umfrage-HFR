@@ -9,17 +9,12 @@ from flask import Flask, request, jsonify, send_from_directory
 import importlib
 
 from survey import Survey, JSON, SurveyError
-
-# Setup tasks
-## Create ./data directory if it doesn't exist
-base_folder = os.path.dirname(__file__)
-
-if not os.path.exists(os.path.join(base_folder, 'data')):
-    os.mkdir(os.path.join(base_folder, 'data'))
+from db import DataBase
 
 import surveys
 
 app = Flask(__name__, static_url_path='')
+db = DataBase('survey')
 
 @app.route('/')
 def index() -> str:
@@ -115,6 +110,15 @@ def eval_survey(survey_name: str) -> JSON:
                 'message': 'The requested content type is not supported for this endpoint.'
             }
         ), 404
+        
+    if 'answers' not in request.json or 'ref' not in request.json:
+        print(request.json)
+        return jsonify(
+            {
+                'status': 'bad_request',
+                'message': 'The request body is missing the required parameters.'
+            }
+        ), 400
     
     try:
         survey = load_survey(survey_name)
@@ -127,8 +131,14 @@ def eval_survey(survey_name: str) -> JSON:
         ), 404
         
     try:
+        ref = request.json['ref']
         answers = request.json['answers']
         evaluation = survey.eval(answers.values())
+        
+        if not survey_name in db:
+            db.add_survey(survey_name, survey.questions)
+            
+        db.add_result(survey_name, answers.values(), ref)
         
         return jsonify(
             evaluation
