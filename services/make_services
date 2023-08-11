@@ -8,10 +8,10 @@ API_SERVER_SERVICE_NAME = 'jagdmodelle-api'
 
 import os
 
-BASE_PATH = os.path.dirname(__file__)
+BASE_PATH = os.path.abspath(os.path.dirname(__file__))
 
-# Go up one directory
-PKG_BASE_PATH = os.path.dirname(BASE_PATH)
+# Get absolute path to the package (one directory above this file)
+PKG_BASE_PATH = os.path.abspath(os.path.join(BASE_PATH, '..'))
 
 # Get dir owner
 import pwd
