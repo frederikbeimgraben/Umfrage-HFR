@@ -1,0 +1,13 @@
+#!/bin/bash
+# Build the server and restart the jagdmodelle-umfrage service
+
+# If the node_modules folder does not exist, install the dependencies
+if [ ! -d "node_modules" ]; then
+  npm install || exit 1
+fi
+
+# Build the server
+npm run build || exit 1
+
+# Restart the service
+sudo systemctl restart jagdmodelle-umfrage || exit 1

@@ -1,0 +1,86 @@
+#!/usr/bin/env python3
+"""
+Generate the systemd service files
+"""
+
+NODE_SERVER_SERVICE_NAME = 'jagdmodelle-umfrage'
+API_SERVER_SERVICE_NAME = 'jagdmodelle-api'
+
+import os
+
+BASE_PATH = os.path.dirname(__file__)
+
+# Go up one directory
+PKG_BASE_PATH = os.path.dirname(BASE_PATH)
+
+# Get dir owner
+import pwd
+
+BASE_PATH_OWNER = pwd.getpwuid(os.stat(BASE_PATH).st_uid).pw_name
+
+# Assert we are root
+if os.getuid() != 0:
+    print('This script must be run as root')
+    exit(1)
+    
+JAGDMODELLE_NODE_SERVICE = f"""[Unit]
+Description=HTTP Server
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 -m http.server 8080
+WorkingDirectory={PKG_BASE_PATH}/jagdmodelle-umfrage
+User={BASE_PATH_OWNER}
+
+[Install]
+WantedBy=multi-user.target
+"""
+
+JAGDMODELLE_API_SERVICE = f"""[Unit]
+Description=API Server
+After=network.target
+
+[Service]
+Type=simple
+ExecStart={PKG_BASE_PATH}/jagdmodelle-api/main.py
+WorkingDirectory={PKG_BASE_PATH}/jagdmodelle-api
+User={BASE_PATH_OWNER}
+
+[Install]
+WantedBy=multi-user.target
+"""
+
+NODE_SERVICE_FILE = f'{BASE_PATH}/{NODE_SERVER_SERVICE_NAME}.service'
+
+# Write the service files in the correct directory
+with open(NODE_SERVICE_FILE, 'w') as f:
+    f.write(JAGDMODELLE_NODE_SERVICE)
+
+API_SERVICE_FILE = f'{BASE_PATH}/{API_SERVER_SERVICE_NAME}.service'
+
+with open(API_SERVICE_FILE, 'w') as f:
+    f.write(JAGDMODELLE_API_SERVICE)
+    
+# Link the service files if they are not already linked
+if not os.path.exists(f'/etc/systemd/system/{NODE_SERVER_SERVICE_NAME}.service'):
+    os.symlink(NODE_SERVICE_FILE, f'/etc/systemd/system/{NODE_SERVER_SERVICE_NAME}.service')
+    
+if not os.path.exists(f'/etc/systemd/system/{API_SERVER_SERVICE_NAME}.service'):
+    os.symlink(API_SERVICE_FILE, f'/etc/systemd/system/{API_SERVER_SERVICE_NAME}.service')
+    
+print('Successfully generated service files and linked them to /etc/systemd/system/')
+
+# Reload the systemd daemon
+import subprocess
+
+subprocess.run(['systemctl', 'daemon-reload'])
+
+# Enable the services
+subprocess.run(['systemctl', 'enable', '--now', NODE_SERVER_SERVICE_NAME])
+
+print(f'Successfully enabled and started {NODE_SERVER_SERVICE_NAME}')
+
+subprocess.run(['systemctl', 'enable', '--now', API_SERVER_SERVICE_NAME])
+
+print(f'Successfully enabled and started {API_SERVER_SERVICE_NAME}')

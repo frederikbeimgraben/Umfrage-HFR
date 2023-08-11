@@ -1,0 +1,12 @@
+# SystemD Service to host a http server using python http.server
+[Unit]
+Description=HTTP Server
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/frederik/Umfrage-HFR/check_update.py
+User=frederik
+
+[Install]
+WantedBy=multi-user.target

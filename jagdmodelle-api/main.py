@@ -160,7 +160,7 @@ def eval_survey(survey_name: str) -> JSON:
 # Set CORS headers for the main app
 @app.after_request
 def after_request(response):
-    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Origin', 'https://*.beimgraben.net http://localhost:*')
     response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
     response.headers.add('Access-Control-Allow-Methods', 'GET,POST')
     response.headers.add('Access-Control-Allow-Credentials', 'true')
