@@ -30,7 +30,7 @@ After=network.target
 [Service]
 Type=simple
 ExecStart=/usr/bin/python3 -m http.server 8080
-WorkingDirectory={PKG_BASE_PATH}/jagdmodelle-umfrage
+WorkingDirectory={PKG_BASE_PATH}/jagdmodelle-umfrage/build
 User={BASE_PATH_OWNER}
 
 [Install]
