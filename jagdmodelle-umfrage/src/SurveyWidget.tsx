@@ -3,8 +3,8 @@ import { Model } from 'survey-core';
 import React from 'react';
 
 import 'survey-core/modern.min.css';
-import './SurveyWidget.css';
 import "survey-core/survey.i18n";
+import './SurveyWidget.css';
 
 // Set main color
 import { StylesManager } from 'survey-core';
@@ -14,10 +14,9 @@ StylesManager.ThemeColors["modern"] = {
     "$main-color": "#187f2c"
 };
 
-const apiServer = "http://api.beimgraben.net";
-const apiEndpoint = "/api/surveys/default";
-const evaluationEndpoint = "/api/surveys/default/eval";
-const referralCode = "123456";
+const apiServer = "https://api.beimgraben.net";
+const apiEndpoint = "/api/surveys/jagdmodelle";
+const evaluationEndpoint = apiEndpoint + "/eval";
 
 export function GetSurvey(): Model {
     // Retrieve survey from server
@@ -27,7 +26,13 @@ export function GetSurvey(): Model {
 
     if (request.status === 200) {
         const survey = JSON.parse(request.responseText);
+        
+        // Locale should be German
         survey.locale = "de";
+
+        // Dont show Question numbers
+        survey.showQuestionNumbers = "off";
+
         return new Model(survey);
     }
 
@@ -78,6 +83,13 @@ class SurveyComponent extends React.Component {
             // Set data[question_index] to response_index
             data[question_index] = response_index;
         }
+
+        // Get page GET parameter "?ref"
+        const urlParams = new URLSearchParams(window.location.search);
+        const ref = urlParams.get('ref');
+        
+        // If ref is null, set to "000000"
+        const referralCode = ref === null ? "000000" : ref;
 
         // Send to server
         const request = new XMLHttpRequest();

@@ -3,6 +3,24 @@
         24, 127, 44, 0.2
     );
     border-radius: 10px;
+
+    text-align: center;
+}
+
+.sv-title {
+    margin-bottom: .6em;
+}
+
+.sv-page {
+    margin-top: 1em;
+}
+
+.sv-page__title {
+    /* Make smaller (1.5 em) */
+    font-size: 1.5em;
+
+    /* Make centered */
+    text-align: center;
 }
 
 .sv-container-modern__title {
@@ -10,7 +28,7 @@
 }
 
 .sv-container-modern {
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 
 .sv-table tr:first-child .sv-table__cell {
@@ -27,12 +45,6 @@ td {
 
 .sv-body__page {
     height: 100%;
-}
-
-.sv-completedpage {
-    background-color: transparent;
-    align-self: center;
-    width: 90%;
 }
 
 .navigation-progress {
